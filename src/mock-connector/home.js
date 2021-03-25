@@ -1,21 +1,16 @@
 import fulfillAPIRequest from '../props/fulfillAPIRequest'
 import createAppData from './utils/createAppData'
+import siteConfig from './config/siteConfig.json'
 
 export default async function home(req, res) {
   return await fulfillAPIRequest(req, {
     appData: createAppData,
     pageData: () =>
       Promise.resolve({
-        title: 'React Storefront',
+        title: siteConfig.HOME_TITLE,
         slots: {
-          heading: 'Welcome to your new React Storefront app.',
-          description: `
-                <p>
-                Here you'll find mock home, category, subcategory, product, and cart pages that you can
-                use as a starting point to build your PWA.
-              </p>
-              <p>Happy coding!</p>
-            `,
+          heading: siteConfig.HOME_HEADING,
+          description: siteConfig.HOME_DESCRIPTION,
         },
       }),
   })

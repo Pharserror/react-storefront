@@ -36,3 +36,9 @@ yarn-error.log*
 src/**/index.js
 
 .vscode
+
+# JSON mode
+src/mock-connector/config/*
+!src/mock-connector/config/mock*.json
+src/mock-connector/data/*
+!src/mock-connector/data/mock*.json

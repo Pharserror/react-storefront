@@ -1,7 +1,7 @@
-import categories from '../data/categories.json';
+import { categories } from '../data';
 
 export default function createTabs() {
-  const tabs = []
+  const tabs = [];
   // COMING SOON!!!
   // const subcategories = [];
 
@@ -14,16 +14,12 @@ export default function createTabs() {
   // }
   // EOF COMING SOON!!!
 
-  for (let i = 1; i <= 10; i++) {
-    tabs.push({
-      as: `/s/${i}`,
-      href: '/s/[...categorySlug]',
-      text: categories[i],
-      // COMING SOON!!!
-      // items: subcategories,
-      // EOF COMING SOON!!!
-    })
-  }
-
-  return tabs
+  return tabs.map({
+    as: `/s/${i}`,
+    href: '/s/[...categorySlug]',
+    text: categories[i],
+    // COMING SOON!!!
+    // items: subcategories,
+    // EOF COMING SOON!!!
+  });
 }
